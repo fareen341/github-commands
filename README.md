@@ -8,6 +8,28 @@
 
 [<h2>1.5 Making branches</h2>](#five)
 
+[<h2>1.6 Add and Commit</h2>](#six)
+
+[<h2>1.7 Status</h2>](#seven) 
+
+[<h2>1.8 To get the last version</h2>](#eight)
+
+[<h2>1.9 Commit History</h2>](#nine)
+
+[<h2>1.10 Git Diff</h2>](#ten)
+
+[<h2>1.11 Ignoring files</h2>](#eleven)
+
+[<h2>1.12 Deleting(Removing) files</h2>](#twelve)
+
+[<h2>1.13 Fork</h2>](#thirteen)
+
+
+
+
+
+
+
 
 
 
@@ -96,12 +118,23 @@ example:
 origin  git@github.com:fareen341/practice.git (fetch)
 origin  git@github.com:fareen341/practice.git (push)
 </pre>
+<b>Git Push</b><br>
 Create index.html file add and commit to check the git push<br>
 Push data to the server:
 <pre>git push origin master</pre>
 Now we can see index.html added successfully on github repo.
+After all the changes, files added etc now we want to push everything we done to repo the use .
+<pre>git push origin master</pre>
+OR
+<pre>git push -u origin master</pre>
+NOTE: if it shows conflict resolve them first.
+<b>Git Pull</b><br>
+To pull the changes team made on git files , pull them to my local computer
+<pre>git pull</pre>
+It will pull all the changes someone made or new files added etc. And to check which lines added on particular files we can use $ git log -p -1.<br> 
+If it has no new commit or files it will show "up-to-date".<br>
 
-<a name="four"><h2>1.5 Making branches</h2></a><br>
+<a name="five"><h2>1.5 Making branches</h2></a><br>
 To check on which branch we are currently working
 <pre>$ git branch</pre>
 This command will show all the branches and the green one is the one we are workin. 
@@ -112,29 +145,93 @@ Method 1:Make branch and use checkout to move into that branch
 $ git branch branch_name   (eg: git branch feature1)
 $ git checkout branch_name
 </pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
-<pre></pre>
+Method 2:Make branch and simultaneously move into that branch
+<pre>$ git checkout -b feature1</pre>
+NOTE: These branches will not make any changes into master branch, and after successfully merging the child branch to master we can delete this child branch.
+To move this branch on repo.
+<pre>$ git push -u origin branch_name</pre>
+To merge this branch with master.
+<pre>
+Go to master branch -> run this command:
+$ git merge branch_name</pre>
+
+<a name="six"><h2>1.6 Add and commit</h2></a><br>
+After making changes the file will come to modified area , we have to move this file to staged area and then commit.<br>
+<b>Moving file to staged area:</b><br>
+To move all the files to staged area:
+<pre>$ git add -A</pre>
+To move single file to staged area.
+<pre>$ git add filename</pre>
+To commit:
+<pre>$ git commit -m "message"</pre>
+<b>To move file to staged area and commit simultaneously(not recommended).</b><br>
+TO ADD & COMMIT MULTIPLE FILES:
+<pre>$ git commit -a -m "message"</pre>
+
+<a name="seven"><h2>1.7 Status</h2></a><br>
+We shoud always check the status of our files
+<pre>$ git status</pre>
+To get short summary of all the files:
+<pre>$ git status -s</pre>
+red M shows files are unmodified , green shows the file is added in staged area and ready to commit<br>
+
+<a name="eight"><h2>1.8 To get the last version</h2></a><br>
+CHECKOUT : TO GET BACK THE LAST VERSION OF UR FILES(it match with last commit)
+First the info.txt has only Hello World 
+After modified it has Hel@@@@@lo Wo@@@@@rld. To get the last commit before add and commit use checkout.
+<pre>$ git checkout info.txt  (for one file)</pre>
+Now the previous version i.e last commit which is Hello World will be back.
+<pre>$ git checkout -f        (for multiple files)</pre>
+
+<a name="nine"><h2>1.9 Commit History</h2></a><br>
+GIT LOG<br>
+For all the history
+<pre>$ git log</pre>
+To get last 5 commit
+<pre>$ git log -p -5    //only show the last 5 commits</pre>
+<pre>$ git log -p -5    //show the last 5 commits with no. of lines added(green color)</pre>
+To get the second last commit 
+<pre>$ git log -p -2</pre>
+To to get third last commit
+<pre>$ git log -p -3</pre>
+Output:<br>
+It will show the changes in green line with +<br>
+
+<a name="ten"><h2>1.10 Git Diff</h2></a><br>
+Shows the difference between the compiled file and the line we added(it compares working dir with staging area).
+My commit has "Hello World!!!", now i added one line after this 'I added '!' at the end' now if i do git diff, it'll show the green color with + sign 'I added '!' at the end' that is added.
+<pre>$ git diff</pre>
+show lines added in green line with +
+
+![diff](https://user-images.githubusercontent.com/59610617/130312237-dbf3c69d-2867-41a0-a113-826a21ccd994.png)<br>
+
+To compare staging area with last commit
+<pre>$ get diff --staged</pre>
+
+<a name="eleven"><h2>1.11 Ignoring files</h2></a><br>
+To ignore the files which has name mylogs.log, mycahces.cache error.txt and compile.txt.<br>
+Create .gitignore file-> add the files which i do not want in my repo it can be any files even .html or .txt
+<pre>$ touch gitignore</pre>
+Open .gitignore and add this name of the files mylogs.log, mycahces.cache error.txt and compile.txt<br>
+Now on check status it is not showing that file even for commit or anything.<br>
+To ignore files which starts with .py
+<pre>*.py add this on .gitignore file</pre>
+To ignore a folder add this line in .gitignore:
+<pre>myfiles/</pre>
+
+<a name="twelve"><h2>1.12 Deleting(Removing) files</h2></a><br>
+Using 1)rm and 2)rm --cached<br>
+To remove the file from stage area and local computer too.
+<pre>$ git rm file_name</pre>
+To just remove it from staged area.
+<pre>$ git rm --cached file_name</pre>
+It will throw the file from staged area to untrack file it says changes to be commited , so now run the commit command(as in myfile.txt deleted)
+If the file is in untract area we must have to once commit this file , we cannot remove the file in untract without commiting
+
+<a name="thirteen"><h2>1.13 Fork</h2></a><br>
+It is user to clone some other ppl repo, to get the exact version of other's repo: Go to git -> click on fork -> Done.<br>
+Now if i do any changes to this repo it won't affect the owner's repo.
+
+<a name="fourteen"><h2>1.14 Pull Request</h2></a><br>
+Make changes ->pull new request ->add comment ->wait for them to accept request and merge
 
