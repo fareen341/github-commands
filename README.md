@@ -6,13 +6,21 @@
 
 [<h2>1.4 Remote</h2>](#four)
 
+<li>Push</li>
+<li>Pull</li>
+
 [<h2>1.5 Making branches</h2>](#five)
+
+<li>Push branch on repo</li>
+<li>Merge branch</li>
 
 [<h2>1.6 Add and Commit</h2>](#six)
 
 [<h2>1.7 Status</h2>](#seven) 
 
-[<h2>1.8 To get the last version</h2>](#eight)
+<li>Get short summary of all files</li>
+
+[<h2>1.8 To get the last version(Undo changes)</h2>](#eight)
 
 [<h2>1.9 Commit History</h2>](#nine)
 
@@ -24,42 +32,7 @@
 
 [<h2>1.13 Fork</h2>](#thirteen)
 
-
-
-
-
-
-
-
-
-
-
-
-[<h2>1.4 Track changes</h2>](#two)
-
-[<h2>1.5 Commit history</h2>](#two)
-
-[<h2>1.6 Track changes</h2>](#two)
-
-[<h2>1.7 Track changes</h2>](#two)
-
-[<h2>1.8 Ignoring files</h2>](#two)
-
-[<h2>1.9 Branching</h2>](#two)
-
-[<h2>1.10 Merging</h2>](#two)
-
-[<h2>1.11 Remote</h2>](#two)
-
-[<h2>1.12 Push Updates</h2>](#two)
-
-[<h2>1.13 Pull Updates</h2>](#two)
-
-[<h2>1.14 Undo Changes</h2>](#two)
-
-[<h2>1.15 Removing Files</h2>](#two)
-
-hr
+<hr>
 <a name="one"><h2>1.1 Course Description</h2></a><br>
 <b>Git and Github difference?</b><br>
 Git is a version control system that lets you manage and keep track of your source code history. GitHub is a cloud-based hosting service that lets you manage Git repositories. If you have open-source projects that use Git, then GitHub is designed to help you better manage them.<br>
@@ -127,10 +100,10 @@ After all the changes, files added etc now we want to push everything we done to
 <pre>git push origin master</pre>
 OR
 <pre>git push -u origin master</pre>
-NOTE: if it shows conflict resolve them first.
+NOTE: if it shows conflict resolve them first.<br>
 <b>Git Pull</b><br>
 To pull the changes team made on git files , pull them to my local computer
-<pre>git pull</pre>
+<pre>$ git pull</pre>
 It will pull all the changes someone made or new files added etc. And to check which lines added on particular files we can use $ git log -p -1.<br> 
 If it has no new commit or files it will show "up-to-date".<br>
 
@@ -148,10 +121,12 @@ $ git checkout branch_name
 Method 2:Make branch and simultaneously move into that branch
 <pre>$ git checkout -b feature1</pre>
 NOTE: These branches will not make any changes into master branch, and after successfully merging the child branch to master we can delete this child branch.
-To move this branch on repo.
+To move this branch on repo.<br>
+<b>Push branch on repo</b>
 <pre>$ git push -u origin branch_name</pre>
 To merge this branch with master.
 <pre>
+<b>Merge this branch</b>
 Go to master branch -> run this command:
 $ git merge branch_name</pre>
 
@@ -171,17 +146,19 @@ TO ADD & COMMIT MULTIPLE FILES:
 <a name="seven"><h2>1.7 Status</h2></a><br>
 We shoud always check the status of our files
 <pre>$ git status</pre>
-To get short summary of all the files:
+<b>Get short summary of all files</b>
 <pre>$ git status -s</pre>
 red M shows files are unmodified , green shows the file is added in staged area and ready to commit<br>
 
-<a name="eight"><h2>1.8 To get the last version</h2></a><br>
+<a name="eight"><h2>1.8 To get the last version(Undo changes)</h2></a><br>
 CHECKOUT : TO GET BACK THE LAST VERSION OF UR FILES(it match with last commit)
 First the info.txt has only Hello World 
 After modified it has Hel@@@@@lo Wo@@@@@rld. To get the last commit before add and commit use checkout.
 <pre>$ git checkout info.txt  (for one file)</pre>
 Now the previous version i.e last commit which is Hello World will be back.
 <pre>$ git checkout -f        (for multiple files)</pre>
+NOTE: $ git checkout branchname and $ git checkout filename both are used for diffrent purpose.
+
 
 <a name="nine"><h2>1.9 Commit History</h2></a><br>
 GIT LOG<br>
