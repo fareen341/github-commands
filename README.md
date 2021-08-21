@@ -200,10 +200,23 @@ To ignore a folder add this line in .gitignore:
 Using 1)rm and 2)rm --cached<br>
 To remove the file from stage area and local computer too.
 <pre>$ git rm file_name</pre>
+This will ask for commit, so commit and push.
 To just remove it from staged area.
 <pre>$ git rm --cached file_name</pre>
 It will throw the file from staged area to untrack file it says changes to be commited , so now run the commit command(as in myfile.txt deleted)
-If the file is in untract area we must have to once commit this file , we cannot remove the file in untract without commiting
+If the file is in untract area we must have to once commit this file , we cannot remove the file in untract without commiting.<br>
+
+![commit](https://user-images.githubusercontent.com/59610617/130314216-2a4daff0-92e1-4c04-8967-f98a4a28bf7c.png)<br>
+
+It says file about.html is in untract area and staged area so we don't need this file on repo so we'll commit not add, if we want this about.html file back on repo then we'll do add or we just do commit for deleted file. Now this file will wait in untracked area.<br>
+
+We can now delete this file or add. To delete.
+<pre>git clean -n</pre>
+This command will show which file will get deleted
+
+Now delete the file for real(f) use f.
+<pre>git clean -f</pre>
+This command will delete the about.html from local system, so back it up if i need this file in my local machine.
 
 <a name="thirteen"><h2>1.13 Fork</h2></a><br>
 It is user to clone some other ppl repo, to get the exact version of other's repo: Go to git -> click on fork -> Done.<br>
