@@ -60,7 +60,7 @@ Get and set configuration variables that control all facets of how Git looks and
 Set the name:
 <pre>$ git config --global user.name "User name"</pre>
 Set the email:
-<pre>$ git config --global user.email "himanshudubey481@gmail.com"</pre>
+<pre>$ git config --global user.email "fareenansari33@gmail.com"</pre>
 Check the setting:
 <pre>$ git config -list</pre>
 
