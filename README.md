@@ -225,3 +225,20 @@ Now if i do any changes to this repo it won't affect the owner's repo.
 <a name="fourteen"><h2>1.14 Pull Request</h2></a><br>
 Make changes ->pull new request ->add comment ->wait for them to accept request and merge
 
+<h1>Github For DevOps</h1>
+<pre>
+Why source code mgmt(SCM)(VCM)?
+To keep tract of all the changes. Which file gets changed etc.
+
+Centrilized VCS
+Disadvantage: When primary server goes down every developer sit idle.
+
+Distributed VCS
+cloud based ->collaborator
+copy of the entire code will be available using clone etc
+Advantage: if the primary server goes down developer will have entire code so they dont have to wait. 
+No need to maintain server
+
+S/W: Git, GitHub, BitBucket, GitLab
+
+</pre>
