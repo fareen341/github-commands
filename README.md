@@ -32,6 +32,8 @@
 
 [<h2>1.13 Fork</h2>](#thirteen)
 
+[<h2>GitHub for DevOps</h2>](#fourteen)
+
 <hr>
 <a name="one"><h2>1.1 Course Description</h2></a><br>
 <b>Git and Github difference?</b><br>
@@ -225,7 +227,8 @@ Now if i do any changes to this repo it won't affect the owner's repo.
 <a name="fourteen"><h2>1.14 Pull Request</h2></a><br>
 Make changes ->pull new request ->add comment ->wait for them to accept request and merge
 
-<h1>Github For DevOps</h1>
+
+<a name="thirteen"><h2>Github For DevOps</h2></a><br>
 <pre>
 Why source code mgmt(SCM)(VCM)?
 To keep tract of all the changes. Which file gets changed etc.
@@ -241,4 +244,18 @@ No need to maintain server
 
 S/W: Git, GitHub, BitBucket, GitLab
 
+</pre>
+
+<h2>To see inside the particular version of the file</h2>
+<pre>
+$ git diff
+will return the commit id(version_no)
+
+$ git show commit_id(version_no)
+will return what are there inside the file
+</pre>
+
+<h2>To unstage</h2>
+<pre>
+$ git restore --staged filename
 </pre>
