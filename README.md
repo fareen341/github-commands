@@ -259,3 +259,11 @@ will return what are there inside the file
 <pre>
 $ git restore --staged filename
 </pre>
+
+<h3>Creating a table in readme.md</h3>
+<pre>
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+</pre>
