@@ -267,3 +267,81 @@ Markdown | Less | Pretty
 *Still* | `renders` | **nicely**
 1 | 2 | 3
 </pre>
+
+
+<h2>Git Log</h2>
+<pre>
+<b>To see one line</b>
+$ git log --oneline
+
+<b>To log on a particular date(give past date)</b>
+$ git log --since 2022-02-02
+
+<b>Using until(give current date)</b>
+$ git log --until 2022-02-03
+
+<b>Give current & past date too</b>
+$ git log --since 2022-02-01 --until 2022-02-03
+
+<b>To filter author</b>
+$ git log --author "priya"
+$ git log --author "priya" --oneline
+
+<b>Since these particular day what that particulat author has done</b>
+$ git log --since 2022-02-01 --until 2022-02-02 --author "priya" --oneline
+
+<b>Search passwd pattern</b>
+$ git log --grep "passwd"
+
+<b>Find filename</b>
+$ git log --grep "hello.java"
+
+<b>last four commit</b>
+$ git log -4
+</pre>
+
+<b>To ignore particular file</b>
+<pre>
+!hello.py
+</pre>
+
+<b>Startswith</b>
+<pre>
+[aeiou]*.txt
+all files tht startwith aeiou
+</pre>
+
+<b>To rename file inside git</b>
+<pre>
+$ git mv oldfile newfile
+$ git mv group groups.java
+</pre>
+
+<h2>Fixing a issue in the code</h2>
+<pre>
+1)copy
+2)fix
+3)test
+4)update then original(master)
+
+<b>How to create copy(branch) of the Repo</b>
+create branch which'll have all the master files and then do bugfix inside the new branch
+and the merge
+$ git merge branch_name
+</pre>
+
+<b>To rename branchname</b>
+<pre>$ git branch -m bug1 issue1</pre>
+
+<b>To delete branch</b>
+<pre>
+$ git branch -d issue1
+</pre>
+
+
+<h2>Remote repo using token</h2>
+<pre>
+pending
+</pre>
+
+
