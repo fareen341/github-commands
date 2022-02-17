@@ -341,7 +341,10 @@ $ git branch -d issue1
 
 <h2>Remote repo using token</h2>
 <pre>
-pending
+On AWS machine adding git url using the acccess token:
+Settings -> Developer Settings -> personal access token -> Generate new token -> save it somewhere
+Add config user & email 
+Now when we push the code it'll ask for username(github username(fareen341)) and pswd(which is access token)
 </pre>
 
 
