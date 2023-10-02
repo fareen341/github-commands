@@ -34,6 +34,8 @@
 
 [<h2>GitHub for DevOps</h2>](#fourteen)
 
+[<h2>Commands related to pust and merge</h2>](#fifteen)
+
 <hr>
 <a name="one"><h2>1.1 Course Description</h2></a><br>
 <b>Git and Github difference?</b><br>
@@ -342,9 +344,13 @@ $ git branch -d issue1
 <h2>Remote repo using token</h2>
 <pre>
 On AWS machine adding git url using the acccess token:
+
 Settings -> Developer Settings -> personal access token -> Generate new token -> save it somewhere
 Add config user & email 
 Now when we push the code it'll ask for username(github username(fareen341)) and pswd(which is access token)
 </pre>
+
+<a name="fifteen"><h2>Commands related to push & merge</h2></a><br>
+
 
 
