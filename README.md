@@ -34,7 +34,7 @@
 
 [<h2>GitHub for DevOps</h2>](#fourteen)
 
-[<h2>Commands related to pust and merge</h2>](#fifteen)
+[<h2>Advance commands: Commands related to pust and merge</h2>](#fifteen)
 
 <hr>
 <a name="one"><h2>1.1 Course Description</h2></a><br>
@@ -356,6 +356,109 @@ Note: remember to create Token(classic) and check repo checkbox, not fine grane 
 </pre>
 
 <a name="fifteen"><h2>Commands related to push & merge</h2></a><br>
+<b>To undo the last push</b>
+<pre>
+1. Identify the Commit to Which You Want to Reset:
+$ git log
+
+2. Check the code inside that log.
+$ git show commit_hash
+
+3. Take the tip of the branch to other coomit
+$ git reset commit_hash             # recommended
+
+$ git reset --hard commit_hash
+
+4. Force push:
+Above command will still show that nothing to commit when you do, git status.
+We need to commit this new changes to branch.
+$ git push --force origin branch_name
+
+
+
+Warning: Be very careful when force pushing, as it rewrites the history of the branch.
+If others are working with the same branch, this can cause conflicts and make it difficult for them to synchronize their work.
+It's best to coordinate with your team before using --force in a collaborative setting.
+
+</pre>
+
+<b>Difference in git reset and git reset --hard</b>
+<pre>
+
+</pre>
+
+<b>Merge with main branch & Merge conflict</b>
+<pre>
+1. Check out to the branch in which merge is needed, for eg i want to merge header branch with main
+
+$ git checkout main
+$ git merge header
+
+
+2. Resolving merge conflict.
+How does merge conflict arise:
+There is branch name header, i did changes and merge with main.
+Now main has latest code of header, i did changes in the same line and push.
+I checkout to header branch, did'nt take latest pull from main.
+Make changes in header, now when i do push, i'll get merge conflict.
+
+Note: when we see merge conflict on vs code,
+current changes: changes done by me.
+incoming changes: changes coming from main branch.
+
+Resolving: resolve merge conflict and push again(imp).
+$ git diff
+$ git push origin header
+</pre>
+
+
+<b>Not taking the latest pull</b>
+<pre>
+Consider the scenario:
+
+I have main branch and header branch.
+I made changes in header branch, merge with main.
+Some new developer did changes in main branch.
+I checkout again on header branch, and without taking the pull request. I made changes and trying to push:
+Then I'll get below error:
+ ! [rejected]        header -> header (fetch first)
+error: failed to push some refs to 'https://github.com/fareen341/amazon.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+To resolve take the pull
+Always recomended to take latest pull before creating new branch or going to work on already existing old branch.
+$ git pull origin main
+
+will give the merge conflict, take both changes, or new changs etc.
+$ git push
+</pre>
+
+<b>Scnarios: There is different changes in header branch and different changes in main branch</b>
+In this case, i have to take pull of same header branch, resolve conflicts and then take pull of main branch and push.
+
+<b>Difference between git pull, and git fetch</b>
+<pre>
+git pull: bring the latest changes from remote branch and merge automatically.
+git fetch: only bring the laster changes from remote repo & does not merge automatically. We need to manually make megre.
+
+git fetch usefull when we want to review changes before merge.
+</pre>
+
+<b>Difference in git merge and git rebase</b>
+<pre>
+
+</pre>
+
+
+<b>Deleting git branch, Difference between: git branch -d and git branch -D</b>
+<pre>
+git branch -d branch_name is used to delete a branch if it has been fully merged into the current branch.
+git branch -D branch_name forcefully deletes a branch, even if it contains unmerged changes.
+</pre>
 
 
 
