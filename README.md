@@ -300,6 +300,9 @@ $ git log --grep "hello.java"
 
 <b>last four commit</b>
 $ git log -4
+
+<b>Commit based on branch</b>
+$ git log branch_name
 </pre>
 
 <b>To ignore particular file</b>
