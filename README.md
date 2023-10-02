@@ -348,6 +348,8 @@ On AWS machine adding git url using the acccess token:
 Settings -> Developer Settings -> personal access token -> Generate new token -> save it somewhere
 Add config user & email 
 Now when we push the code it'll ask for username(github username(fareen341)) and pswd(which is access token)
+
+Note: remember to create Token(classic) and check repo checkbox, not fine grane token
 </pre>
 
 <a name="fifteen"><h2>Commands related to push & merge</h2></a><br>
