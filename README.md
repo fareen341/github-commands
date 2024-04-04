@@ -473,3 +473,14 @@ Git fetch is a command used to retrieve commits, files, and references (such as 
 5. Fetch Before Pull.
 6. Reduced Risk of Accidental Overwrites:
 </pre>
+
+
+# Questions & Answers:
+<pre>
+ <b>Question:</b> I have two branch one is main and other is header, i made changes in header and switched to header, why it did not give add and commit the changes before switch to another branch error? 
+ <b>Answer:</b> When you switch branches in Git, any uncommitted changes in your working directory will be carried over to the new branch as long as those changes don't conflict with the new branch's contents. Git will do its best to preserve  
+ your changes across branch switches.
+
+ <b>Question:</b> What if i have made changes in main and switched to header branch and coomit those changes in header, will it allow me or give conflict or what?
+ <b>Answer:</b> It will add those changes in Header branch then.
+</pre>
