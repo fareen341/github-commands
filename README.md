@@ -36,6 +36,8 @@
 
 [<h2>Advance commands: Commands related to pust and merge</h2>](#fifteen)
 
+[<h2>Git Fetch</h2>](#git_fetch)
+
 <hr>
 <a name="one"><h2>1.1 Course Description</h2></a><br>
 <b>Git and Github difference?</b><br>
@@ -460,5 +462,14 @@ git branch -d branch_name is used to delete a branch if it has been fully merged
 git branch -D branch_name forcefully deletes a branch, even if it contains unmerged changes.
 </pre>
 
+<a name="git_fetch"><h2>git fetch(recommended before git pull):</h2></a><br>
+Git fetch is a command used to retrieve commits, files, and references (such as branches and tags) from a remote repository to your local repository. Unlike git pull, which automatically merges changes from the remote repository into your local branch, git fetch only downloads the changes and updates your remote-tracking branches. This means it won't affect your local branches directly unless you choose to integrate the changes manually.
 
-
+<pre>
+1. To check if there is any changes need to be pull.
+2. Fetch and see the output before pull.
+3. No Automatic Merging.
+4. No Direct Impact on Working Directory.
+5. Fetch Before Pull.
+6. Reduced Risk of Accidental Overwrites:
+</pre>
