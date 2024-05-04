@@ -342,7 +342,12 @@ $ git merge branch_name
 
 <b>To delete branch</b>
 <pre>
+1. Using -d: git will stop from deleting, in that case we can use -D(force delete)
 $ git branch -d issue1
+$ git branch -D issue1
+
+2. Delete the Branch from the Remote Repository:
+$ git push origin --delete <branch_name>
 </pre>
 
 
