@@ -347,7 +347,7 @@ $ git branch -d issue1
 $ git branch -D issue1
 
 2. Delete the Branch from the Remote Repository:
-$ git push origin --delete <branch_name>
+$ git push origin --delete issue1
 </pre>
 
 
