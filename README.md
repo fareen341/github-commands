@@ -488,7 +488,16 @@ I have main branch and header branch, header branch does not have latest changes
 <pre>
 $ git fetch origin main    --(check for the changes in main branch)
 $ git rebase main          --(resolve merge conflict, if any)
-$ git push
+$ git push -u origin header    
+
+if error:
+error: failed to push some refs to 'https://github.com/fareen341/SocietyManagementStable.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+$ git push -u origin header --force
 </pre>
 
 
