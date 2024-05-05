@@ -38,6 +38,8 @@
 
 [<h2>Git Fetch</h2>](#git_fetch)
 
+[<h2>Git Rebase</h2>](#git_rebase)
+
 <hr>
 <a name="one"><h2>1.1 Course Description</h2></a><br>
 <b>Git and Github difference?</b><br>
@@ -478,6 +480,16 @@ Git fetch is a command used to retrieve commits, files, and references (such as 
 5. Fetch Before Pull.
 6. Reduced Risk of Accidental Overwrites:
 </pre>
+
+
+<a name="git_rebase"><h2>git rebase</h2></a><br>
+Scnario: <br>
+I have main branch and header branch, header branch does not have latest changes of main branch, to make lastest changes available in header branch we can use rebase. Do fetch first.
+<pre>
+$ git fetch origin main    --(check for the changes in main branch)
+$ git rebase main
+</pre>
+
 
 
 # Questions & Answers:
