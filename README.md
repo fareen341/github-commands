@@ -487,7 +487,8 @@ Scnario: <br>
 I have main branch and header branch, header branch does not have latest changes of main branch, to make lastest changes available in header branch we can use rebase. Do fetch first.
 <pre>
 $ git fetch origin main    --(check for the changes in main branch)
-$ git rebase main
+$ git rebase main          --(resolve merge conflict, if any)
+$ git push
 </pre>
 
 
